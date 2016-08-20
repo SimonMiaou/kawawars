@@ -1,6 +1,6 @@
 class HexagonsController < ApplicationController
   def index
-    @hexagons = Hexagon.all
+    @hexagons = Hexagon.all.map { |h| HexagonDecorator.new(h) }
   end
 
   def create
