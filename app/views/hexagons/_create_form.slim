@@ -1,0 +1,6 @@
+= form_tag hexagons_path, method: :post do
+  = label_tag('hexagon[coord_x]', 'X')
+  = text_field_tag('hexagon[coord_x]')
+  = label_tag('hexagon[coord_y]', 'Y')
+  = text_field_tag('hexagon[coord_y]')
+  = submit_tag('Create')

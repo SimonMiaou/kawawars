@@ -1,0 +1,52 @@
+$grid-color: #305252
+$hexagon-color: #A3C4BC
+$hexagon-body-height: 60px
+$hexagon-body-width: 104px
+$hexagon-peak-border: $hexagon-body-width / 2
+$hexagon-peak-height: $hexagon-body-height / 2
+
+.hexagon:before
+  border-bottom: $hexagon-peak-height solid $hexagon-color
+  border-left: $hexagon-peak-border solid transparent
+  border-right: $hexagon-peak-border solid transparent
+  content: ''
+  height: 0
+  left: 0
+  position: absolute
+  top: -1 * $hexagon-peak-height
+  width: 0
+
+.hexagon
+  background-color: $hexagon-color
+  height: $hexagon-body-height
+  margin-bottom: $hexagon-peak-height
+  margin-top: $hexagon-peak-height
+  position: relative
+  width: $hexagon-body-width
+
+.hexagon:after
+  border-left: $hexagon-peak-border solid transparent
+  border-right: $hexagon-peak-border solid transparent
+  border-top: $hexagon-peak-height solid $hexagon-color
+  bottom: -1 * $hexagon-peak-height
+  content: ''
+  height: 0
+  left: 0
+  position: absolute
+  width: 0
+
+.hexagon-content
+  margin: 0px 2px 0px 2px
+
+.grid
+  background-color: $grid-color
+  bottom: 0
+  left: 0
+  position: absolute
+  right: 0
+  top: 50px
+
+.grid-center
+  left: 50%
+  position: absolute
+  top: 50%

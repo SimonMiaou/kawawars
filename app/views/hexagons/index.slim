@@ -1,0 +1,10 @@
+= render 'create_form'
+
+.grid
+  .grid-center
+    - @hexagons.each do |hexagon|
+      .hexagon style=hexagon.css_position
+        .hexagon-content
+          = hexagon.to_coord.to_s
+          br
+          = hexagon.to_offset.to_s
