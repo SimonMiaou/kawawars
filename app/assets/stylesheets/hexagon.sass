@@ -1,5 +1,6 @@
 $grid-color: #305252
 $hexagon-color: #A3C4BC
+$hexagon-hover-color: #488286
 $hexagon-body-height: 60px
 $hexagon-body-width: 104px
 $hexagon-peak-border: $hexagon-body-width / 2
@@ -34,6 +35,14 @@ $hexagon-peak-height: $hexagon-body-height / 2
   left: 0
   position: absolute
   width: 0
+
+// hover colors
+.hexagon:hover:before
+  border-bottom: $hexagon-peak-height solid $hexagon-hover-color
+.hexagon:hover
+  background-color: $hexagon-hover-color
+.hexagon:hover:after
+  border-top: $hexagon-peak-height solid $hexagon-hover-color
 
 .hexagon-content
   margin: 0px 2px 0px 2px

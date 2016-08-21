@@ -1,6 +1,6 @@
 class HexagonsController < ApplicationController
   def index
-    @hexagons = Hexagon.all
+    @hexagons = Hexagon.all.map { |h| HexagonDecorator.new(h) }
   end
 
   def create
@@ -8,7 +8,7 @@ class HexagonsController < ApplicationController
 
     if hexagon.valid?
       hexagon.save!
-      redirect_to hexagons_path, notice: "Hexagon #{hexagon.coords_to_s} was created"
+      redirect_to hexagons_path, notice: "Hexagon #{hexagon.to_coord.to_s} was created"
     else
       redirect_to hexagons_path, notice: hexagon.errors.full_messages
     end
